@@ -1,0 +1,10 @@
+update test set name='name0',date='2016-11-30',dnum=999999.99,inum=100,datetime='2016-11-30 12:23:59',time='12:23:59' where id=0;
+update test set name='name1',date='2016-11-30',dnum=1000000.99,inum=101,datetime='2016-11-30 12:23:59',time='12:23:59' where id=1;
+update test set name='name2',date='2016-11-30',dnum=1000001.99,inum=102,datetime='2016-11-30 12:23:59',time='12:23:59' where id=2;
+update test set name='name3',date='2016-11-30',dnum=1000002.99,inum=103,datetime='2016-11-30 12:23:59',time='12:23:59' where id=3;
+update test set name='name4',date='2016-11-30',dnum=1000003.99,inum=104,datetime='2016-11-30 12:23:59',time='12:23:59' where id=4;
+update test set name='name5',date='2016-11-30',dnum=1000004.99,inum=105,datetime='2016-11-30 12:23:59',time='12:23:59' where id=5;
+update test set name='name6',date='2016-11-30',dnum=1000005.99,inum=106,datetime='2016-11-30 12:23:59',time='12:23:59' where id=6;
+update test set name='name7',date='2016-11-30',dnum=1000006.99,inum=107,datetime='2016-11-30 12:23:59',time='12:23:59' where id=7;
+update test set name='name8',date='2016-11-30',dnum=1000007.99,inum=108,datetime='2016-11-30 12:23:59',time='12:23:59' where id=8;
+update test set name='name9',date='2016-11-30',dnum=1000008.99,inum=109,datetime='2016-11-30 12:23:59',time='12:23:59' where id=9;

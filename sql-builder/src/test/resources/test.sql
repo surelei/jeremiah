@@ -1,0 +1,1 @@
+update test set name=#2#,date=#3#,dnum=#4#,inum=#5#,datetime=#6#,time=#7# where id=#1#;
