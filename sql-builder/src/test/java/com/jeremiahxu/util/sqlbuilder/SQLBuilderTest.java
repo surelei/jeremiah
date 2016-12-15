@@ -11,11 +11,13 @@ import java.util.List;
 
 import junit.framework.Assert;
 
+import org.junit.After;
 import org.junit.Test;
 
 public class SQLBuilderTest {
 	private static String path = "e:/workspace/private/sql-builder/src/test/resources/";
 
+	@After
 	public void clear() {
 		File dir = new File(path + "exports");
 		for (File file : dir.listFiles()) {
