@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script type="text/javascript" src="${base}/res/js/role/roleListMin.js"></script>
+	<link rel="stylesheet" type="text/css" href="${base}/res/css/role.css" />
+	<title>角色列表</title>
+</head>
+<body>
+	<table>
+		<tr><th><input type="checkbox" id="check-all" />全选</th><th>角色代码</th><th>角色名称</th><th>角色描述</th></tr>
+		<#list roleList as role>
+		<#if role.checked>
+		<tr><td><input type="checkbox" checked="checked" id="${role.id}" value="${role.name}"/></td><td>${role.code}</td><td>${role.name}</td><td>${role.description}</td></tr>
+		<#else>
+		<tr><td><input type="checkbox" id="${role.id}" value="${role.name}"/></td><td>${role.code}</td><td>${role.name}</td><td>${role.description}</td></tr>
+		</#if>
+		</#list>
+	</table>
+</body>
+</html>

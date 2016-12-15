@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- resource -->
+	<bean id="res_root" class="com.jeremiahxu.leisure.po.ResProfile">
+		<property name="name"><value>所有资源</value></property>
+		<property name="url"><value><![CDATA[/**]]></value></property>
+	</bean>
+	<!-- role -->
+	<bean id="role_admin" class="com.jeremiahxu.leisure.po.RoleProfile">
+		<property name="code"><value>role_admin</value></property>
+		<property name="name"><value>超级管理员角色</value></property>
+		<property name="description"><value>超级管理员角色</value></property>
+		<property name="resources">
+			<set>
+				<ref bean="res_root" />
+			</set>
+		</property>
+	</bean>
+	<!-- organization -->
+	<bean id="org_root" class="com.jeremiahxu.leisure.po.OrgProfile" >
+		<property name="code"><value>root_org</value></property>
+		<property name="name"><value>root_org</value></property>
+		<property name="order"><value>0</value></property>
+		<property name="description"><value>虚拟的组织结构根节点</value></property>
+	</bean>
+	<!-- user -->
+	<bean id="user_admin" class="com.jeremiahxu.leisure.po.UserProfile">
+		<property name="name"><value>admin</value></property>
+		<property name="password"><value>leisure</value></property>
+		<property name="firstName"><value>super</value></property>
+		<property name="lastName"><value>admin</value></property>
+		<property name="org">
+			<ref bean="org_root"/>
+		</property>
+		<property name="roles">
+			<set>
+				<ref bean="role_admin"/>
+			</set>
+		</property>
+	</bean>
+	<!-- menu -->
+	<bean id="menu_root" class="com.jeremiahxu.leisure.po.MenuProfile">
+		<property name="code"><value>root_menu</value></property>
+		<property name="name"><value>root_menu</value></property>
+		<property name="order"><value>0</value></property>
+		<property name="type"><value>99</value></property>
+		<property name="url"><value></value></property>
+		<property name="imagePath"><value></value></property>
+		<property name="children">
+			<set>
+				<bean id="menu_system_config" class="com.jeremiahxu.leisure.po.MenuProfile">
+					<property name="code"><value>system_config</value></property>
+					<property name="name"><value>系统设置</value></property>
+					<property name="order"><value>100</value></property>
+					<property name="type"><value>99</value></property>
+					<property name="url"><value></value></property>
+					<property name="imagePath"><value></value></property>
+					<property name="children">
+						<set>
+							<bean id="menu_menu_config" class="com.jeremiahxu.leisure.po.MenuProfile">
+								<property name="code"><value>menu_config</value></property>
+								<property name="name"><value>菜单设置</value></property>
+								<property name="order"><value>100</value></property>
+								<property name="type"><value>0</value></property>
+								<property name="url"><value><![CDATA[/menu/list.htm]]></value></property>
+								<property name="imagePath"><value></value></property>
+							</bean>
+							<bean id="menu_org_config" class="com.jeremiahxu.leisure.po.MenuProfile">
+								<property name="code"><value>org_config</value></property>
+								<property name="name"><value>组织结构设置</value></property>
+								<property name="order"><value>200</value></property>
+								<property name="type"><value>0</value></property>
+								<property name="url"><value><![CDATA[/org/list.htm]]></value></property>
+								<property name="imagePath"><value></value></property>
+							</bean>
+							<bean id="menu_role_config" class="com.jeremiahxu.leisure.po.MenuProfile">
+								<property name="code"><value>role_config</value></property>
+								<property name="name"><value>角色设置</value></property>
+								<property name="order"><value>300</value></property>
+								<property name="type"><value>0</value></property>
+								<property name="url"><value><![CDATA[/role/list.htm]]></value></property>
+								<property name="imagePath"><value></value></property>
+							</bean>
+							<bean id="menu_user_config" class="com.jeremiahxu.leisure.po.MenuProfile">
+								<property name="code"><value>user_config</value></property>
+								<property name="name"><value>用户管理</value></property>
+								<property name="order"><value>400</value></property>
+								<property name="type"><value>0</value></property>
+								<property name="url"><value><![CDATA[/user/list.htm]]></value></property>
+								<property name="imagePath"><value></value></property>
+							</bean>
+							<bean id="menu_res_config" class="com.jeremiahxu.leisure.po.MenuProfile">
+								<property name="code"><value>res_config</value></property>
+								<property name="name"><value>资源管理</value></property>
+								<property name="order"><value>500</value></property>
+								<property name="type"><value>0</value></property>
+								<property name="url"><value><![CDATA[/res/list.htm]]></value></property>
+								<property name="imagePath"><value></value></property>
+							</bean>
+						</set>
+					</property>
+				</bean>
+				<bean id="menu_logout" class="com.jeremiahxu.leisure.po.MenuProfile">
+					<property name="code"><value>user_logout</value></property>
+					<property name="name"><value>退出系统</value></property>
+					<property name="order"><value>99999</value></property>
+					<property name="type"><value>1</value></property>
+					<property name="url"><value><![CDATA[/j_spring_security_logout]]></value></property>
+					<property name="imagePath"><value></value></property>
+				</bean>
+			</set>
+		</property>
+	</bean>
+</beans>

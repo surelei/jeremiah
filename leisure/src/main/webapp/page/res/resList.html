@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache" />    
+	<meta http-equiv="Expires" content="0" /> 
+	<script type="text/javascript" src="${base}/res/jquery/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="${base}/res/jquery/jquery-ui-1.10.4.min.js"></script>
+	<script type="text/javascript" src="${base}/res/js/res/resList.js"></script>
+	<link rel="stylesheet" type="text/css" href="${base}/res/jquery/jquery-ui-1.10.4.min.css" />
+	<link rel="stylesheet" type="text/css" href="${base}/res/css/res.css" />
+	<title>资源管理</title>
+</head>
+<body>
+<div class="toolsbar">
+	<a  id="createRes" href="#" title="创建资源"><img border="0" src="${base}/res/images/crud/create.png" /></a>
+</div>
+<div>
+	<table id="resList">
+		<tr><th id="name">资源名称</th><th id="url">URL</th><th id="op">操作</th></tr>
+		<#list resList as res>
+		<tr>
+			<td id="${res.id}">${res.name}</td>
+			<td>${res.url}</td>
+			<td>
+				<a class="editRes" id="${res.id}" href="#" title="编辑资源"><img border="0" src="${base}/res/images/crud/edit.png" /></a>
+				<a class="removeRes" id="${res.id}" href="#" title="删除资源"><img border="0" src="${base}/res/images/crud/remove.png" /></a>
+			</td>
+		</tr>
+		</#list>
+	</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script type="text/javascript" src="${base}/res/jquery/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="${base}/res/jquery/jquery-ui-1.10.4.min.js"></script>
+	<script type="text/javascript" src="${base}/res/js/user/userNew.js"></script>
+	<link rel="stylesheet" type="text/css" href="${base}/res/jquery/jquery-ui-1.10.4.min.css" />
+	<link rel="stylesheet" type="text/css" href="${base}/res/css/user.css" />
+	<title>资源设置</title>
+</head>
+<body>
+
+<form method="post" id="userNewForm" action="">
+<table>
+	<tr>
+		<td>登录名:</td>
+		<td><input name="user.name" value="" size="50"/></td>
+	</tr>
+	<tr>
+		<td>密码:</td>
+		<td><input name="user.password" value="" type="password" size="50"/></td>
+	</tr>
+	<tr>
+		<td>姓:</td>
+		<td><input name="user.firstName" value="" size="50"/></td>
+	</tr>
+	<tr>
+		<td>名:</td>
+		<td><input name="user.lastName" value="" size="50"/></td>
+	</tr>
+	<tr>
+		<td>组织结构:</td>
+		<td>
+			<input id="orgId" type="hidden" name="user.org.id" value=""/>
+			<input id="orgName" name="user.org.name" value="" size="50"/>
+			<button id="list-org">选择组织机构</button>
+		</td>
+	</tr>
+	<tr>
+		<td>所属角色:</td>
+		<td>
+			<select id="roles" style="width:100px" size="5"></select>
+			<button id="list-role">选择角色</button>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">	
+			<button id="save-user">保存</button>
+			<button id="cancle-user">取消</button>
+		</td>
+	</tr>
+</table>
+</form>
+<div id="detail" title=""></div>
+</body>
+</html>

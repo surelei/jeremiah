@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<#assign org = JspTaglibs["/WEB-INF/tld/org.tld"] />
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache" />    
+	<meta http-equiv="Expires" content="0" /> 
+	<script type="text/javascript" src="${base}/res/jstree/jquery.jstree.js"></script>
+	<script type="text/javascript" src="${base}/res/js/org/orgListMin.js"></script>
+	<link rel="stylesheet" type="text/css" href="${base}/res/css/org.css" />
+	<title>组织结构管理</title>
+</head>
+<body>
+<div id="orgtree" class="jstree-apple">
+	<@org.orgtree />
+</div>
+</body>
+</html>

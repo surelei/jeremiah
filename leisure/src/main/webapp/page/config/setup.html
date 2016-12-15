@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script type="text/javascript" src="${base}/res/jquery/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="${base}/res/jquery/jquery-ui-1.10.4.min.js"></script>
+	<link rel="shortcut icon" href="${base}/res/images/logo.ico" />
+	<link rel="stylesheet" type="text/css" href="${base}/res/jquery/jquery-ui-1.10.4.css" />
+	<script type="text/javascript">
+	$(function() {
+		$("#init").button().click(function(){
+			$("#result").load("config/init.htm");
+		});
+	});
+	</script>
+</head>
+<body>
+	<div><button id="init">init data</button></div>
+	<div id="result"></div>
+</body>
+</html>

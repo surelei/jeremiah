@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache" />    
+	<meta http-equiv="Expires" content="0" /> 
+	<script type="text/javascript" src="${base}/res/jquery/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="${base}/res/jquery/jquery-ui-1.10.4.min.js"></script>
+	<script type="text/javascript" src="${base}/res/js/role/roleList.js"></script>
+	<link rel="stylesheet" type="text/css" href="${base}/res/jquery/jquery-ui-1.10.4.min.css" />
+	<link rel="stylesheet" type="text/css" href="${base}/res/css/role.css" />
+	<title>角色管理</title>
+</head>
+<body>
+<div class="toolsbar">
+	<a  id="createRole" href="#" title="创建角色"><img border="0" src="${base}/res/images/crud/create.png" /></a>
+</div>
+<div>
+	<table id="roleList">
+		<tr><th id="code">角色代码</th><th id="name">角色名称</th><th id="desc">角色描述</th><th id="op">操作</th></tr>
+		<#list roleList as role>
+		<tr>
+			<td>${role.code}</td>
+			<td id="${role.id}">${role.name}</td>
+			<td>${role.description}</td>
+			<td>
+				<a  id="showUsers" name="${role.id}" href="#" title="显示用户"><img border="0" src="${base}/res/images/crud/user.png" /></a>
+				<a id="showResources" name="${role.id}" href="#" title="显示权限"><img border="0" src="${base}/res/images/crud/resource.png" /></a>
+				<a id="editRole" name="${role.id}" href="#" title="编辑角色"><img border="0" src="${base}/res/images/crud/edit.png" /></a>
+				<a id="removeRole" name="${role.id}" href="#" title="删除角色"><img border="0" src="${base}/res/images/crud/remove.png" /></a>
+			</td>
+		</tr>
+		</#list>
+	</table>
+</div>
+<div id="detail" title=""></div>
+</body>
+</html>

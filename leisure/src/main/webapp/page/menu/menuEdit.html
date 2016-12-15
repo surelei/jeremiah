@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="${base}/res/jquery/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="${base}/res/jquery/jquery-ui-1.10.4.min.js"></script>
+<script type="text/javascript" src="${base}/res/js/menu/menuEdit.js"></script>
+<link rel="stylesheet" type="text/css" href="${base}/res/jquery/jquery-ui-1.10.4.css" />
+<link rel="stylesheet" type="text/css" href="${base}/res/css/menu.css" />
+<title>菜单设置</title>
+</head>
+<body>
+
+<form method="post" id="menuEditForm" action="">
+<div>
+	<input type="hidden" id="parentId" name="menu.parent.id" value="${menu.parent.id}"/>
+	<input type="hidden" id="menuId" name="menu.id" value="${menu.id}"/>
+</div>
+<table>
+	<tr>
+		<td>父菜单名称:</td>
+		<td><input name="menu.parent.name" value="${menu.parent.name}" disabled="disabled"/></td>
+	</tr>
+	<tr>
+		<td>菜单代码:</td>
+		<td><input name="menu.code" value="${menu.code}"/></td>
+	</tr>
+	<tr>
+		<td>菜单名称:</td>
+		<td><input name="menu.name" value="${menu.name}"/></td>
+	</tr>
+	<tr>
+		<td>目标URL:</td>
+		<td><input name="menu.url" value="${menu.url}"/></td>
+	</tr>
+	<tr>
+		<td colspan="2">	
+			<button id="save-menu">保存</button>
+			<button id="cancle-menu">取消</button>
+		</td>
+	</tr>
+</table>
+</form>
+</body>
+</html>

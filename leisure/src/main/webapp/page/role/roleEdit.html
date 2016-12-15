@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script type="text/javascript" src="${base}/res/jquery/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="${base}/res/jquery/jquery-ui-1.10.4.min.js"></script>
+	<script type="text/javascript" src="${base}/res/js/role/roleEdit.js"></script>
+	<link rel="stylesheet" type="text/css" href="${base}/res/jquery/jquery-ui-1.10.4.min.css" />
+	<link rel="stylesheet" type="text/css" href="${base}/res/css/role.css" />
+	<title>编辑角色信息</title>
+</head>
+<body>
+
+<form method="post" id="roleEditForm" action="">
+<div>
+	<input type="hidden" id="roleId" name="role.id" value="${role.id}"/>
+</div>
+<table>
+	<tr>
+		<td>角色代码:</td>
+		<td><input name="role.code" value="${role.code}"/></td>
+	</tr>
+	<tr>
+		<td>角色名称:</td>
+		<td><input name="role.name" value="${role.name}"/></td>
+	</tr>
+	<tr>
+		<td>角色描述:</td>
+		<td><input name="role.description" value="${role.description}"/></td>
+	</tr>
+	<tr>
+		<td>所属用户:</td>
+		<td>
+			<select id="users" size="10">
+				<#list role.users as user>
+				<option>${user.name}</option>
+				</#list>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td>角色权限:</td>
+		<td>
+			<select id="resources" size="10">
+				<#list role.resources as res>
+				<input type="hidden" name="role.resources[${res_index}].id" value="${role.resources[res_index].id}" />
+				<option>${res.name}</option>
+				</#list>
+			</select>
+			<button id="select-res">设置权限</button>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">	
+			<button id="save-role">保存</button>
+			<button id="cancle-role">取消</button>
+		</td>
+	</tr>
+</table>
+</form>
+<div id="detail" tilte="权限设置"></div>
+</body>
+</html>

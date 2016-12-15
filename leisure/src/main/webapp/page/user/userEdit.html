@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script type="text/javascript" src="${base}/res/jquery/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="${base}/res/jquery/jquery-ui-1.10.4.min.js"></script>
+	<script type="text/javascript" src="${base}/res/js/user/userEdit.js"></script>
+	<link rel="stylesheet" type="text/css" href="${base}/res/jquery/jquery-ui-1.10.4.css" />
+	<link rel="stylesheet" type="text/css" href="${base}/res/css/user.css" />
+	<title>资源设置</title>
+</head>
+<body>
+
+<form method="post" id="userEditForm" action="">
+<input type="hidden" name="user.id" value="${user.id}"/>
+<table>
+	<tr>
+		<td>登录名:</td>
+		<td><input name="user.name" value="${user.name}" size="50"/></td>
+	</tr>
+	<tr>
+		<td>密码:</td>
+		<td><input name="user.password" value="${user.password}" type="password" size="50"/></td>
+	</tr>
+	<tr>
+		<td>姓:</td>
+		<td><input name="user.firstName" value="${user.firstName}" size="50"/></td>
+	</tr>
+	<tr>
+		<td>名:</td>
+		<td><input name="user.lastName" value="${user.lastName}" size="50"/></td>
+	</tr>
+	<tr>
+		<td>组织结构:</td>
+		<td>
+			<input type="hidden" name="user.org.id" value="${user.org.id}"/>
+			<input name="user.org.name" value="${user.org.name}" size="50"/>
+			<button id="list-org">选择组织机构</button>
+		</td>
+	</tr>
+	<tr>
+		<td>所属角色:</td>
+		<td>
+			<#list user.roles as role>
+			<input type="hidden" name="user.roles[role_index].id" value="${role.id}"/>
+			<input value="${role.name}" size="50"/>
+			</#list>
+			<button id="list-role">选择角色</button>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">	
+			<button id="save-user">保存</button>
+			<button id="cancle-user">取消</button>
+		</td>
+	</tr>
+</table>
+</form>
+</body>
+</html>

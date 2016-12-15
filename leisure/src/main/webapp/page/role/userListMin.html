@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="${base}/res/css/role.css" />
+	<title>资源列表</title>
+</head>
+<body>
+	<table>
+		<tr><th>用户名</th><th>姓</th><th>名</th></tr>
+		<#list userList as user>
+		<tr><td>${user.name}</td><td>${user.firstName}</td><td>${user.lastName}</td></tr>
+		</#list>
+	</table>
+</body>
+</html>

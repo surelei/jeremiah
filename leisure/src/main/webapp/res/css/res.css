@@ -1,0 +1,28 @@
+body {
+	font-family: Verdana;
+	font-size: 12px
+}
+
+div {
+	margin: 5px 5px 5px 5px;
+}
+
+table td th {
+	border: 1px solid gray;
+  	border-spacing: 0px 0px;
+  	border-collapse: separate
+}
+
+th {
+	background-color: silver
+}
+
+#name {
+	width: 200px
+}
+#url {
+	width: 400px
+}
+#op {
+	width: 100px
+}

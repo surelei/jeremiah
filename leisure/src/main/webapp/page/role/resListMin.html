@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script type="text/javascript" src="${base}/res/js/role/resListMin.js"></script>
+	<link rel="stylesheet" type="text/css" href="${base}/res/css/role.css" />
+	<title>资源列表</title>
+</head>
+<body>
+	<table>
+		<tr><th>全选<input type="checkbox" id="check-all"/></th><th>名称</th><th>URL</th></tr>
+		<#list resourceList as res>
+		<tr>
+			<td>
+				<#if res.checked>
+				<input type="checkbox" value="${res.id}" checked/>
+				<#else>
+				<input type="checkbox" value="${res.id}"/>
+				</#if>
+			</td>
+			<td>${res.name}</td>
+			<td>${res.url}</td></tr>
+		</#list>
+	</table>
+</body>
+</html>
