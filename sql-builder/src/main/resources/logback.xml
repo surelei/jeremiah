@@ -11,7 +11,7 @@
 	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<File>logs/sql-builder.log</File>
 		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-			<FileNamePattern>logs/sql-builder.log.%i.bak</FileNamePattern>
+			<FileNamePattern>logs/sql-builder.log.%i</FileNamePattern>
 			<MinIndex>1</MinIndex>
 			<MaxIndex>13</MaxIndex>
 		</rollingPolicy>
@@ -22,7 +22,7 @@
 			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
 		</layout>
 	</appender>
-	<logger name="com.jeremiahxu.nio">
+	<logger name="com.jeremiahxu.util.sqlbuilder">
 		<level value="INFO" />
 		<appender-ref ref="STDOUT" />
 		<appender-ref ref="FILE" />
