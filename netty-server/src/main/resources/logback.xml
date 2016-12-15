@@ -9,9 +9,9 @@
 	</appender>
 	<!-- 文件输出日志 (文件大小策略进行文件输出，超过指定大小对文件备份) -->
 	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<File>logs/netty-server.log</File>
+		<File>log/netty-server.log</File>
 		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-			<FileNamePattern>logs/netty-server.log.%i.bak</FileNamePattern>
+			<FileNamePattern>logs/netty-server.log.%i</FileNamePattern>
 			<MinIndex>1</MinIndex>
 			<MaxIndex>13</MaxIndex>
 		</rollingPolicy>
