@@ -9,9 +9,9 @@
 	</appender>
 	<!-- 文件输出日志 (文件大小策略进行文件输出，超过指定大小对文件备份) -->
 	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<File>logs/excel-util.log</File>
+		<File>log/excel-util.log</File>
 		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-			<FileNamePattern>logs/excel-util.log.%i.bak</FileNamePattern>
+			<FileNamePattern>logs/excel-util.log.%i</FileNamePattern>
 			<MinIndex>1</MinIndex>
 			<MaxIndex>13</MaxIndex>
 		</rollingPolicy>
@@ -22,7 +22,7 @@
 			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
 		</layout>
 	</appender>
-	<logger name="com.jeremiahxu.nio">
+	<logger name="com.jeremiahxu.office.excel">
 		<level value="INFO" />
 		<appender-ref ref="STDOUT" />
 		<appender-ref ref="FILE" />
