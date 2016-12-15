@@ -1,0 +1,11 @@
+body {
+	font-family: Verdana;
+	font-size: 12px;
+	text-align: center
+}
+#header {
+	text-align: left
+}
+#footer {
+	text-align: center
+}

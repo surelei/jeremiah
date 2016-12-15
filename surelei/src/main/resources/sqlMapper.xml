@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jeremiahxu.surelei.mapper.MenuMapper">
+	<resultMap id="menuInfo" type="menu">
+		<result property="id" column="MI_ID" />
+		<result property="code" column="MI_CODE"/>
+		<result property="name" column="MI_NAME"/>
+		<result property="level" column="MI_LEVEL"/>
+		<result property="order" column="MI_ORDER"/>
+		<result property="type" column="MI_TYPE"/>
+		<result property="url" column="MI_URL"/>
+		<result property="idPath" column="MI_ID_PATH"/>
+		<result property="namePath" column="MI_NAME_PATH"/>
+		<result property="parent.id" column="MI_PARENT_ID"/>
+		<collection property="children" column="MI_ID" select="selectByParent" />
+	</resultMap>
+</mapper>

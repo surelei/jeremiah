@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>error</title>
+</head>
+<body>
+	<div>
+		<img src="../res/images/error/500.png" />
+		<![CDATA[<#if exception??>]]>
+		${exception.message}
+		<![CDATA[</#if>]]>
+	</div>
+	<div>
+		<![CDATA[<#if exceptionStack??>]]>
+		<textarea rows="20" cols="100">${exceptionStack}</textarea>
+		<![CDATA[</#if>]]>
+	</div>
+</body>
+</html>

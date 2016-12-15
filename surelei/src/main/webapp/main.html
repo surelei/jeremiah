@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<#assign base=request.getContextPath()>
+<#assign menu = JspTaglibs["/WEB-INF/tld/menu.tld"] />
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script type="text/javascript" src="${base}/res/jquery/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="${base}/res/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="${base}/res/jquery/jquery-jmenu.min.js"></script>
+	<script type="text/javascript" src="${base}/res/js/main.js"></script>
+	<script type="text/javascript" src="${base}/res/js/centerPanel.js"></script>
+	<script type="text/javascript" src="${base}/res/js/topMenu.js"></script>
+	<link rel="shortcut icon" type="image/ico" href="${base}/res/images/logo.ico" />
+	<link rel="stylesheet" type="text/css" href="${base}/res/jquery/jquery-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="${base}/res/jquery/jquery-jmenu.css" media="screen"/>
+	<link rel="stylesheet" type="text/css" href="${base}/res/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="${base}/res/css/centerPanel.css" />
+	<title>leisure</title>
+</head>
+<body>
+	<div id="header"><#include "/page/panel/header.html"></div>
+	<div id="topmenu"><@menu.menutree id="topmenu" clazz="jmenu-level-0"/></div>
+	<div id="center"><#include "/page/panel/centerPanel.html"></div>
+	<div id="footer"><#include "/page/panel/footer.html"></div>
+</body>
+</html>
