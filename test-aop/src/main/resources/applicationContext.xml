@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+	<aop:aspectj-autoproxy />
+	<bean id="testClass" class="com.jeremiahxu.test.TestTargetClass" />
+	<bean id="redisAdvice" class="com.jeremiahxu.test.RedisAdvice">
+		<!-- 对象在缓存中存在时间，单位：秒 -->
+		<property name="time" value="60" />
+		<property name="jedisPool" ref="jedisPool" />
+	</bean>
+	<aop:config>
+		<aop:aspect id="aspect" ref="redisAdvice">
+			<aop:pointcut id="pointcut"
+				expression="execution(* com.jeremiahxu.test.*.find*(..))" />
+			<aop:before method="doBefore" pointcut-ref="pointcut" />
+			<aop:after method="doAfter" pointcut-ref="pointcut" />
+			<aop:around method="doAround" pointcut-ref="pointcut" />
+			<aop:after-returning method="doReturn"
+				pointcut-ref="pointcut" />
+			<aop:after-throwing method="doThrowing" throwing="ex"
+				pointcut-ref="pointcut" />
+		</aop:aspect>
+	</aop:config>
+	<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+		<property name="maxIdle" value="10" /> <!--最大能够保持idel状态的对象数 -->
+		<property name="maxTotal" value="20" /><!--最大分配的对象数 -->
+		<property name="testOnBorrow" value="true" /><!--当调用borrow Oject方法时，是否进行有效性检查 -->
+	</bean>
+	<bean id="jedisPool" class="redis.clients.jedis.JedisPool">
+		<constructor-arg index="0" ref="jedisPoolConfig" />
+		<!-- host -->
+		<constructor-arg index="1" value="127.0.0.1" />
+		<!-- port -->
+		<constructor-arg index="2" value="6379" type="int" />
+		<!-- timeout -->
+		<constructor-arg index="3" value="10000" type="int" />
+		<!-- password -->
+		<constructor-arg index="4" value="ilovexulei" />
+	</bean>
+</beans>
