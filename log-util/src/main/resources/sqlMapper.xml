@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jeremiahxu.util.log.mapper.LogMapper">
+	<resultMap id="recordMap" type="record">
+		<result property="id" column="log_id" />
+		<result property="url" column="log_url" />
+		<result property="userNumber" column="log_user_num" />
+		<result property="pageView" column="log_page_view" />
+		<result property="year" column="log_year" />
+		<result property="month" column="log_month" />
+		<result property="day" column="log_day" />
+		<result property="hour" column="log_hour" />
+	</resultMap>
+</mapper>
